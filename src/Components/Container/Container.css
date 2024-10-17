@@ -1,0 +1,13 @@
+/* In your CSS file, apply these styles */
+
+body {
+    background-color: #1a1a1a; /* Dark shade similar to header/footer */
+    color: #5588ff40; /* Light text color for contrast */
+}
+
+.con {
+    background-color: #1a1a1a; /* Matches header/footer */
+    padding: 20px; /* Add some padding for content */
+    border-radius: 8px; /* Optional: rounded corners for a modern look */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+}
