@@ -1,16 +1,22 @@
-import React from 'react'
-import { FaBars, FaTimes, FaHome, FaClipboardList, FaPlusCircle } from 'react-icons/fa';
+import React from 'react';
+import { FaHome } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
-const Logo = (className="") => {
-  return (
-    <div
-                    className="flex items-center space-x-2 cursor-pointer"
-                    onClick={() => navigate('/')}t
-                >
-                    <FaHome size={24} className="text-white" />
-                    <span className="text-lg font-csty font-semibold ">BlogSite</span>
-                </div>
-  )
-}
+const Logo = ({ className = "" }) => {
+    const navigate = useNavigate();
 
-export default Logo
+    return (
+        <div
+            className={`flex items-center space-x-2 cursor-pointer ${className}`}
+            onClick={() => navigate('/')}
+        >
+            <FaHome size={28} className="text-white" />
+            <span className="text-xl font-cmax font-bold  text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+                BlogSite
+            </span>
+        </div>
+    );
+    
+};
+
+export default Logo;

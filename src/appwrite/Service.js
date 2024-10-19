@@ -46,7 +46,7 @@ async getPost(slug){
     }
 }
 
-async getPosts(queries=[Query.equal("title", "active")]){
+async getPosts(queries=[Query.equal("status", ["active"])]){
 try {
     return await this.database.listDocuments(conf.appwriteDbId,conf.appwriteCollectionId,queries);
 } catch (error) {

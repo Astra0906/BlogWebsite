@@ -10,33 +10,34 @@ const Footer = () => {
   };
 
   return (
-    <footer className="min-w-full   text-sm text-white dark:bg-slate-900">
+    <footer className="min-w-full text-sm text-white dark:bg-slate-900">
       <div className="flex w-full flex-col items-center justify-start gap-8 border-b border-slate-300 p-4 pb-4 lg:flex-row lg:items-start lg:gap-12 dark:border-slate-700">
         {/* Logo */}
-        <Logo/>
+        <Logo />
 
         {/* Navigation */}
         <div className="flex lg:mb-4 lg:w-3/12">
           <nav>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:underline">Home</a>
+                <a href="/" className="hover:underline">Home</a>
               </li>
               <li>
-                <a href="#" className="hover:underline">About</a>
+                <a href="/about" className="hover:underline">About</a>
               </li>
               <li>
-                <a href="#" className="hover:underline">Services</a>
+                <a href="/services" className="hover:underline">Services</a>
               </li>
               <li>
-                <a href="#" className="hover:underline">Contact</a>
+                <a href="/contact" className="hover:underline">Contact</a>
               </li>
             </ul>
           </nav>
         </div>
 
         {/* Social Icons */}
-        <div className="flex flex-col items-center lg:mb-4 lg:w-3/12 lg:items-start">
+                {/* Social Icons */}
+                <div className="flex flex-col items-center lg:mb-4 lg:w-3/12 lg:items-start">
           <p className="mb-2 font-semibold">Follow Us On:</p>
           <div className="flex space-x-4">
             <a href="#" className="hover:text-orange-600">
@@ -74,7 +75,7 @@ const Footer = () => {
                 <path d="M4 20l6.768-6.768m2.46-2.46l6.772-6.772" />
               </svg>
             </a>
-            <a href="#" className="hover:text-orange-600">
+            <a href="https://www.instagram.com/astra.asraful/" className="hover:text-orange-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -93,7 +94,7 @@ const Footer = () => {
                 <path d="M16.5 7.5l0 .01" />
               </svg>
             </a>
-            <a href="#" className="hover:text-orange-600">
+            <a href="www.linkedin.com/in/asraful-hoque-0a412026a" className="hover:text-orange-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -139,7 +140,7 @@ const Footer = () => {
       </div>
 
       <div className="flex flex-col items-center justify-between gap-4 p-4 md:flex-row">
-        <div className="text-center md:text-left">&copy; 2024 Your Company</div>
+        <div className="text-center md:text-left">&copy; 2024 BlogSite</div>
         <div className="flex space-x-4">
           <a href="#" className="hover:underline">Terms</a>
           <a href="#" className="hover:underline">Privacy</a>

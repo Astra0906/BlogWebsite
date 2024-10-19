@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        curx:["Tangerine", "cursive"],
-        csty:["Style Script", "cursive"]
+        curx:['"Amatic SC"', 'cursive'],
+        cmax:['Montserrat', 'sans-serif']
       }
     }
     

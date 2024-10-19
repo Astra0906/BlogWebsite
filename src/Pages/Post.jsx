@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux';
 import service from '../appwrite/Service';
 import { Button, Container } from '../Components';
 import parse from 'html-react-parser';
-import Skeleton from 'react-loading-skeleton';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const Post = () => {
@@ -30,15 +31,21 @@ const Post = () => {
     }, [slug, navigate]);
 
     const deletePost = async () => {
-        await service.deleteFile(post.featuredImage);
-        const status = await service.deletePost(slug);
-        if (status) navigate('/');
+        await service.deleteFile(post.featuredImage).then(async()=>{
+            const status = await service.deletePost(slug);
+            if (status) navigate('/');
+        }).catch(()=>{
+            return "download failed !!";
+        })
+        
     };
 
     return (
         <div className="py-8">
             <Container>
                 {/* Image Section */}
+                <SkeletonTheme baseColor="#082f49" highlightColor="#444" enableAnimation={true}>
+
                 <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
                     {loading ? (
                         <Skeleton height={400} width="100%" />
@@ -64,6 +71,7 @@ const Post = () => {
                         </div>
                     )}
                 </div>
+                
 
                 {/* Title Section */}
                 <div className="w-full text-white mb-6">
@@ -82,6 +90,7 @@ const Post = () => {
                         parse(post.content)
                     )}
                 </div>
+                </SkeletonTheme>
             </Container>
         </div>
     );

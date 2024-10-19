@@ -5,6 +5,10 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import './Home.css'; // Add animation CSS here
+import { h1 } from 'framer-motion/client';
+import Services from './Services';
+import About from './About';
+import Contact from './Contact';
 
 const Home = () => {
     const [posts, setPosts] = useState([]);
@@ -23,7 +27,8 @@ const Home = () => {
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
-    }, []);
+            console.log(authStatus);
+    }, [authStatus]);
 
     const handlePostClick = (id) => {
         setInProp(false); // Trigger exit animation
@@ -50,7 +55,7 @@ const Home = () => {
             <div className="w-full py-8">
                 <Container>
                     <SectionDivider title="Articles" />
-                    <div className="grid md:grid-cols-4 gap-4">
+                    {authStatus? <><div className="grid md:grid-cols-4 gap-4">
                         {posts.map((p) => (
                             <div 
                                 key={p.$id} 
@@ -60,7 +65,19 @@ const Home = () => {
                                 <PostCard {...p} />
                             </div>
                         ))}
+                        
                     </div>
+                    <About/>
+                    <Services/>
+                    <Contact/></>
+                    :<>
+                    <h1 className='font-bold text-center text-cyan-100 text-5xl'>Login to view posts</h1>
+                    <About/>
+                    <Services/>
+                    <Contact/>
+                    </>
+                    
+                    }
                 </Container>
             </div>
         </CSSTransition>

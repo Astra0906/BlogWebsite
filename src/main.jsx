@@ -13,6 +13,10 @@ import Allposts from './Pages/Allposts.jsx';
 import Addpost from './Pages/Addpost.jsx';
 import EditPost from './Pages/EditPost.jsx';
 import Post from './Pages/Post.jsx';
+import About from './Pages/About.jsx';
+import Services from './Pages/Services.jsx';
+import Contact from './Pages/Contact.jsx';
+import Notfound from './Pages/Notfound.jsx';
 
 // Define routes using `createBrowserRouter`
 const router = createBrowserRouter([
@@ -35,6 +39,23 @@ const router = createBrowserRouter([
           <AuthLayout Authentication={false}>
             <SignUp />
           </AuthLayout>
+        ),
+      },{
+        path: '/about',
+        element: (
+            <About />
+        ),
+      },
+      {
+        path: '/contact',
+        element: (
+            <Contact />
+        ),
+      },
+      {
+        path: '/services',
+        element: (
+            <Services />
         ),
       },
       {
@@ -62,6 +83,7 @@ const router = createBrowserRouter([
         ),
       },
       { path: '/post/:slug', element: <Post /> },
+      { path: '*', element: <Notfound /> },
     ],
   },
 ]);

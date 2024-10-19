@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import service from '../appwrite/Service'
 
-const Postcard = ({ $id, title, featuredImage }) => {
+const PostCard = ({ $id, title, featuredImage }) => {
   console.log("'feture :"+ title);
     return (
         <Link to={`/post/${$id}`}>
@@ -35,4 +35,4 @@ const Postcard = ({ $id, title, featuredImage }) => {
     )
 }
 
-export default Postcard
+export default PostCard

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Container, PostForm } from '../Components';
 import { useNavigate, useParams } from 'react-router-dom';
 import service from '../appwrite/Service';
-import Skeleton from 'react-loading-skeleton'; // Importing the Skeleton component
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'; // Importing the Skeleton component
+
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const EditPost = () => {
@@ -31,6 +32,8 @@ const EditPost = () => {
             </Container>
         </div>
     ) : (
+        <SkeletonTheme baseColor="#082f49" highlightColor="#444" enableAnimation={true}>
+
         <div className='py-8 w-full'>
             <Container>
                 {/* Loading skeleton for the post form */}
@@ -38,6 +41,7 @@ const EditPost = () => {
                 <Skeleton height={300} className="mb-4" />
             </Container>
         </div>
+        </SkeletonTheme>
     );
 };
 

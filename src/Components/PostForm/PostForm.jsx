@@ -101,20 +101,24 @@ const PostForm = ({ post }) => {
                     <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
                 </div>
                 <div className='w-full md:col-span-1 '>
-                    <Input
-                        type="file"
-                        className="mb-4"
-                        label="Featured image :"
-                        accept="image/png, image/jpg, image/jpeg, image/gif"
-                        {...register("image", { required: !post })}
-                    />
-                    {
-                        post && (
-                            <div className='w-full mb-4'>
-                                <img src={service.previewFile(post.featuredImage)} alt={post.title} className='rounded-lg' />
-                            </div>
-                        )
-                    }
+                <Input
+    type="file"
+    className="mb-4"
+    label="Featured image :"
+    accept="image/png, image/jpg, image/jpeg, image/gif"
+    {...register("image", { required: !post })}
+/>
+{!post && (
+    <p className="text-red-500 text-sm mb-4">
+        * Uploading an image is mandatory for new posts.
+    </p>
+)}
+{post && (
+    <div className='w-full mb-4'>
+        <img src={service.previewFile(post.featuredImage)} alt={post.title} className='rounded-lg' />
+    </div>
+)}
+
                     <Select
                         options={["active", "inactive"]}
                         label="Status"
