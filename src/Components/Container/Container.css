@@ -6,8 +6,9 @@ body {
 }
 
 .con {
+    max-width: 100%;
     background-color: #1a1a1a; /* Matches header/footer */
-    padding: 20px; /* Add some padding for content */
+    padding: 0; /* Add some padding for content */
     border-radius: 8px; /* Optional: rounded corners for a modern look */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
 }

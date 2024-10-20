@@ -8,7 +8,7 @@ import { login, logout } from './store/authSlice';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/header/header';
 import { Outlet } from 'react-router-dom';
-
+import './App.css'
 function App() {
   const [loading, setloading] = useState(true);
   const dispatch=useDispatch()

@@ -27,24 +27,42 @@ async updatePost(slug,{title,content,featuredImage,status,userId}){
     }
 }
 
-async deletePost(slug){
+async deletePost(slug) {
     try {
-        await this.database.deleteDocument(conf.appwriteDbId,conf.appwriteCollectionId,slug);
+        const post = await this.getPost(slug);  // Ensure post exists
+        if (!post) {
+            console.warn("Post not found, cannot delete.");
+            return false;  // Avoid unnecessary deletion attempt
+        }
+
+        await this.database.deleteDocument(conf.appwriteDbId, conf.appwriteCollectionId, slug);
+        console.log("Post deleted successfully");
         return true;
     } catch (error) {
-        console.log("Services : Eror ::deletePost : error",error);
-
+        console.error("Services : Error ::deletePost : error", error);
         return false;
     }
 }
-async getPost(slug){
+
+
+async getPost(slug) {
     try {
-        return await this.database.getDocument(conf.appwriteDbId,conf.appwriteCollectionId,slug);
+        const post = await this.database.getDocument(
+            conf.appwriteDbId,
+            conf.appwriteCollectionId,
+            slug
+        );
+        return post;
     } catch (error) {
-        console.log("Services : Eror ::getPost : error",error);
-      return false;
+        if (error.code === 404) {
+            console.warn(`No post found with slug: ${slug}`);
+        } else {
+            console.error("Services : Error ::getPost :", error);
+        }
+        return false;
     }
 }
+
 
 async getPosts(queries=[Query.equal("status", ["active"])]){
 try {
