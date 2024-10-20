@@ -12,7 +12,7 @@ import LogoutBtn from "./header/Logout";
 import PostForm from "./PostForm/PostForm";
 import Container from "./Container/Container";
 import SectionDivider from "./SectionDiv";
-import PostCard from "./Postcard";
+import PostCard from "./PostCard";
 import RTE from "./RTE";
 export {
     SectionDivider,
