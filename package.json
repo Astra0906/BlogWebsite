@@ -11,10 +11,15 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@lexical/react": "^0.18.0",
+    "@lexical/rich-text": "^0.18.0",
+    "@mantine/rte": "^5.10.5",
     "@reduxjs/toolkit": "^2.2.8",
     "@tinymce/tinymce-react": "^5.1.1",
+    "@uiw/react-md-editor": "^4.0.4",
     "aos": "^2.3.4",
     "appwrite": "^14.0.1",
+    "draft-js": "^0.11.7",
     "framer-motion": "^11.11.9",
     "html-react-parser": "^5.1.18",
     "ldrs": "^1.0.2",
@@ -28,7 +33,9 @@
     "react-router-dom": "^6.26.2",
     "react-spinners": "^0.14.1",
     "react-toastify": "^10.0.6",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "rehype": "^13.0.2",
+    "rehype-sanitize": "^6.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

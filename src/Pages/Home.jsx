@@ -27,7 +27,7 @@ const Home = () => {
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
-            console.log(authStatus);
+           
     }, [authStatus]);
 
     const handlePostClick = (id) => {

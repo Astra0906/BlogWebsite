@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import service from '../appwrite/Service'
 
 const PostCard = ({ $id, title, featuredImage }) => {
-  console.log("'feture :"+ title);
+ 
     return (
         <Link to={`/post/${$id}`}>
 
